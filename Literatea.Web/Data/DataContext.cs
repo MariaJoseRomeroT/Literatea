@@ -5,12 +5,12 @@ using Literatea.Web.Data.Entities;
 using Microsoft.EntityFrameworkCore;
    public class DataContext:DbContext
     {
-        DbSet<readerUser> readerUsers { get; set; }
-        DbSet<Room> Rooms { get; set; }
-        DbSet<Book> Books { get; set; }
-        DbSet<BookDetail> BookDetails { get; set; }
-        DbSet<Forum> Forums { get; set; }
-        DbSet<ForumDetail> ForumDetails { get; set; }
+        public DbSet<readerUser> readerUsers { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<BookDetail> BookDetails { get; set; }
+        public DbSet<Forum> Forums { get; set; }
+        public DbSet<ForumDetail> ForumDetails { get; set; }
         public DataContext(DbContextOptions<DataContext> options):base(options)
         {
 
