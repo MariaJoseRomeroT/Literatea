@@ -2,15 +2,17 @@
 namespace Literatea.Web.Data
 {
 using Literatea.Web.Data.Entities;
-using Microsoft.EntityFrameworkCore;
-   public class DataContext:DbContext
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore;
+   public class DataContext:IdentityDbContext<User>
     {
-        public DbSet<readerUser> readerUsers { get; set; }
+        public DbSet<ReaderUser> ReaderUsers { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Book> Books { get; set; }
-        public DbSet<BookDetail> BookDetails { get; set; }
+        public DbSet<Author> BookDetails { get; set; }
+        public DbSet<RoomDetail> RoomDetails { get; set; }
         public DbSet<Forum> Forums { get; set; }
-        public DbSet<ForumDetail> ForumDetails { get; set; }
+        public DbSet<Author> ForumDetails { get; set; }
         public DataContext(DbContextOptions<DataContext> options):base(options)
         {
 

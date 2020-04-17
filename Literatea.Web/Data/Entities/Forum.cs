@@ -1,6 +1,4 @@
-﻿
-
-namespace Literatea.Web.Data.Entities
+﻿namespace Literatea.Web.Data.Entities
 {
 using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -10,6 +8,6 @@ using System.Collections.Generic;
         public int Id { get; set; }
         [Display(Name = "Foro")]
         public string Name { get; set; }
-        public ICollection<Room> Rooms { get; set; }
+        public ICollection<RoomDetail> RoomsDetails { get; set; }
     }
 }

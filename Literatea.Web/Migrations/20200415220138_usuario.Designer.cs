@@ -4,14 +4,16 @@ using Literatea.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Literatea.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20200415220138_usuario")]
+    partial class usuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -92,15 +94,19 @@ namespace Literatea.Web.Migrations
                     b.ToTable("ForumDetails");
                 });
 
-            modelBuilder.Entity("Literatea.Web.Data.Entities.ReaderUser", b =>
+            modelBuilder.Entity("Literatea.Web.Data.Entities.readerUser", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("RoomId");
+
                     b.Property<string>("UserId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RoomId");
 
                     b.HasIndex("UserId");
 
@@ -127,27 +133,6 @@ namespace Literatea.Web.Migrations
                     b.HasIndex("ForumId");
 
                     b.ToTable("Rooms");
-                });
-
-            modelBuilder.Entity("Literatea.Web.Data.Entities.RoomDetail", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("AdmissionDate");
-
-                    b.Property<int?>("ReaderUserId");
-
-                    b.Property<int?>("RoomId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ReaderUserId");
-
-                    b.HasIndex("RoomId");
-
-                    b.ToTable("RoomDetails");
                 });
 
             modelBuilder.Entity("Literatea.Web.Data.Entities.User", b =>
@@ -331,8 +316,12 @@ namespace Literatea.Web.Migrations
                         .HasForeignKey("ForumDetailId");
                 });
 
-            modelBuilder.Entity("Literatea.Web.Data.Entities.ReaderUser", b =>
+            modelBuilder.Entity("Literatea.Web.Data.Entities.readerUser", b =>
                 {
+                    b.HasOne("Literatea.Web.Data.Entities.Room", "Room")
+                        .WithMany("ReaderUsers")
+                        .HasForeignKey("RoomId");
+
                     b.HasOne("Literatea.Web.Data.Entities.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
@@ -344,20 +333,9 @@ namespace Literatea.Web.Migrations
                         .WithMany("Rooms")
                         .HasForeignKey("BookId");
 
-                    b.HasOne("Literatea.Web.Data.Entities.Forum")
+                    b.HasOne("Literatea.Web.Data.Entities.Forum", "Forum")
                         .WithMany("Rooms")
                         .HasForeignKey("ForumId");
-                });
-
-            modelBuilder.Entity("Literatea.Web.Data.Entities.RoomDetail", b =>
-                {
-                    b.HasOne("Literatea.Web.Data.Entities.ReaderUser", "ReaderUser")
-                        .WithMany("RoomDetails")
-                        .HasForeignKey("ReaderUserId");
-
-                    b.HasOne("Literatea.Web.Data.Entities.Room", "Room")
-                        .WithMany("RoomDetails")
-                        .HasForeignKey("RoomId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

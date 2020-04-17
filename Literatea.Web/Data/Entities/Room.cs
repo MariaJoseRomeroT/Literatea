@@ -11,11 +11,8 @@ namespace Literatea.Web.Data.Entities
         [Display(Name = "Sala")]
         [Required(ErrorMessage = "{0} es requerido")]
         public string Name { get; set; }
-
-        //una sala o room esta relacionada con varios usuarios lectores
-        public ICollection<readerUser> ReaderUsers { get; set; }
-
+        public ICollection<RoomDetail> RoomDetails { get; set; }
         public Book Book { get; set; }
-        public Forum Forum { get; set; }
+        
     }
 }
