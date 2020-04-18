@@ -1,4 +1,4 @@
-﻿@model Literatea.Web.Data.Entities.Book
+﻿@model Literatea.Web.Data.Entities.ReaderUser
 
 @{
     ViewData["Title"] = "Details";
@@ -7,14 +7,14 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Book</h4>
+    <h4>ReaderUser</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.BookName)
+            @Html.DisplayNameFor(model => model.Name)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.BookName)
+            @Html.DisplayFor(model => model.Name)
         </dd>
     </dl>
 </div>
