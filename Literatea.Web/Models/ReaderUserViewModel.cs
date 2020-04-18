@@ -1,6 +1,4 @@
-﻿
-
-namespace Literatea.Web.Models
+﻿namespace Literatea.Web.Models
 {
 using Literatea.Web.Data.Entities;
     using Microsoft.AspNetCore.Http;

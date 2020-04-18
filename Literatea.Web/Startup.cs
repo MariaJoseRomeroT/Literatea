@@ -38,6 +38,7 @@ namespace Literatea.Web
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
             services.AddScoped<ICombosHelper,CombosHelper>();
             services.AddScoped<IImageHelper, ImageHelper>();
 

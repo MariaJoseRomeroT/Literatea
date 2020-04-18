@@ -1,11 +1,10 @@
-﻿using Literatea.Web.Data;
+﻿namespace Literatea.Web.Helpers
+{
+using Literatea.Web.Data;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
-namespace Literatea.Web.Helpers
-{
     public class CombosHelper : ICombosHelper
     {
         private readonly DataContext dataContext;
@@ -14,20 +13,41 @@ namespace Literatea.Web.Helpers
         {
             this.dataContext = dataContext;
         }
-        public IEnumerable<SelectListItem> GetComboReaderUsers()
+
+        public IEnumerable<SelectListItem> GetComboUsers()
         {
-            var list = dataContext.ReaderUsers.Select(
+            var list = dataContext.Users.Select(
                 c=>new SelectListItem 
             {
-                Text= c.Name,
+                Text = c.FullName,
                 Value = $"{c.Id}"
                 }).ToList();
             list.Insert(0,new SelectListItem
             {
-                Text="[Debe seleccionar un genero]",
+                Text="[Ingresa nombre de usuario...]",
                 Value="0"
             });
             return list;
+        }
+
+        public IEnumerable<SelectListItem> GetComboReaderUsers()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<SelectListItem> GetComboBooks()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<SelectListItem> GetComboRooms()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<SelectListItem> GetComboForums()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -5,6 +5,9 @@ namespace Literatea.Web.Helpers
 {
     interface ICombosHelper
     {
-        IEnumerable<SelectListItem> GetComboReaderUsers();
+        IEnumerable<SelectListItem> GetComboUsers();
+        IEnumerable<SelectListItem> GetComboBooks();
+        IEnumerable<SelectListItem> GetComboRooms();
+        IEnumerable<SelectListItem> GetComboForums();
     }
 }
