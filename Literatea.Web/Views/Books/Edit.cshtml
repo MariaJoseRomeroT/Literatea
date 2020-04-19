@@ -18,6 +18,30 @@
                 <input asp-for="BookName" class="form-control" />
                 <span asp-validation-for="BookName" class="text-danger"></span>
             </div>
+
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <input asp-for="Gender" class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Editorial" class="control-label"></label>
+                <input asp-for="Editorial" class="form-control" />
+                <span asp-validation-for="Editorial" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="NumberPages" class="control-label"></label>
+                <input asp-for="NumberPages" class="form-control" />
+                <span asp-validation-for="NumberPages" class="text-danger"></span>
+
+                <div class="form-group">
+                    <label asp-for="Author.AuthorName" class="control-label"></label>
+                    <input asp-for="Author.AuthorName" class="form-control" />
+                    <span asp-validation-for="Author.AuthorName" class="text-danger"></span>
+                </div>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>

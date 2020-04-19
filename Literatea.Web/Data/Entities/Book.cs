@@ -23,9 +23,13 @@ using System.Collections.Generic;
         [Display(Name = "Numero de páginas")]
         
         public int NumberPages { get; set; }
- 
-        public ICollection<Room> Rooms { get; set; }
+
+        [Display(Name = "Nombre Autor")]
         public Author Author { get; set; }
 
+        public ICollection<Room> Rooms { get; set; }
+
+
+       
     }
 }
