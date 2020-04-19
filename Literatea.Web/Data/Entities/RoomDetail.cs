@@ -10,5 +10,7 @@ namespace Literatea.Web.Data.Entities
         public DateTime AdmissionDate { get; set; }
         public ReaderUser ReaderUser { get; set; }
         public Room Room { get; set; }
+        public Forum Forum { get; set; }
+
     }
 }

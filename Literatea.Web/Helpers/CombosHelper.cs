@@ -37,7 +37,18 @@ using System.Linq;
 
         public IEnumerable<SelectListItem> GetComboBooks()
         {
-            throw new NotImplementedException();
+            var list = dataContext.Books.Select(
+                c => new SelectListItem
+                {
+                    Text = c.BookName,
+                    Value = $"{c.Id}"
+                }).ToList();
+            list.Insert(0, new SelectListItem
+            {
+                Text = "[Ingresa nombre de usuario...]",
+                Value = "0"
+            });
+            return list;
         }
 
         public IEnumerable<SelectListItem> GetComboRooms()
