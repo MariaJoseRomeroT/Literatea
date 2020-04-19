@@ -60,6 +60,22 @@ using System.Linq;
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<SelectListItem> GetComboAuthors()
+        {
+            var list = dataContext.Authors.Select(
+                c => new SelectListItem
+                {
+                    Text = c.AuthorName,
+                    Value = $"{c.Id}"
+                }).ToList();
+            list.Insert(0, new SelectListItem
+            {
+                Text = "[Ingresa nombre del Autor...]",
+                Value = "0"
+            });
+            return list;
+        }
     }
 }
         

@@ -18,5 +18,9 @@
         {
             return View(await dataContext.ReaderUsers.ToListAsync());  
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }

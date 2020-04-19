@@ -17,5 +17,9 @@
         {
             return View(await dataContext.Users.ToListAsync());
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }

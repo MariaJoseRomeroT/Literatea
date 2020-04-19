@@ -1,5 +1,4 @@
-﻿@model Literatea.Web.Data.Entities.Room
-
+﻿@model Literatea.Web.Data.Entities.Author
 @{
     ViewData["Title"] = "Delete";
 }
@@ -8,17 +7,17 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Sala</h4>
+    <h4>Autor</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.AuthorName)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Name)
+            @Html.DisplayFor(model => model.AuthorName)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Delete" class="btn btn-default" /> |

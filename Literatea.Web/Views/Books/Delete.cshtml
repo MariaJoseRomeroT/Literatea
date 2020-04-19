@@ -13,12 +13,19 @@
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.BookName)
+            @Html.DisplayNameFor(model => model.Gender)
+            @Html.DisplayNameFor(model => model.Editorial)
+            @Html.DisplayNameFor(model => model.NumberPages)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.BookName)
+            @Html.DisplayFor(model => model.Gender)
+            @Html.DisplayNameFor(model => model.Editorial)
+            @Html.DisplayNameFor(model => model.NumberPages)
         </dd>
     </dl>
-    
+
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
