@@ -1,5 +1,4 @@
 ﻿
-
 namespace Literatea.Web.Data.Entities
 {
     using System.Collections.Generic;

@@ -1,21 +1,20 @@
-﻿@model IEnumerable<Literatea.Web.Data.Entities.Room>
+﻿@model IEnumerable<Literatea.Web.Data.Entities.RoomDetail>
 
 @{
-    ViewData["Title"] = "Sala";
+    ViewData["Title"] = "Index";
 }
 
-<h2>SALA</h2>
+<h2>Index</h2>
 
 <p>
-    <a asp-action="Create" class="btn-primary">Crear Sala</a>
+    <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(model => model.AdmissionDate)
             </th>
-
             <th></th>
         </tr>
     </thead>
@@ -23,7 +22,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.AdmissionDate)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
