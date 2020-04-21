@@ -56,6 +56,11 @@ using System.Linq;
             throw new NotImplementedException();
         }
 
+        public IEnumerable<SelectListItem> GetComboRoomDetails()
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<SelectListItem> GetComboForums()
         {
             throw new NotImplementedException();

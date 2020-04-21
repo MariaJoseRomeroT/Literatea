@@ -9,6 +9,7 @@ namespace Literatea.Web.Helpers
         IEnumerable<SelectListItem> GetComboReaderUsers();
         IEnumerable<SelectListItem> GetComboBooks();
         IEnumerable<SelectListItem> GetComboRooms();
+        IEnumerable<SelectListItem> GetComboRoomDetails();
         IEnumerable<SelectListItem> GetComboForums();
         IEnumerable<SelectListItem> GetComboAuthors();
     }
